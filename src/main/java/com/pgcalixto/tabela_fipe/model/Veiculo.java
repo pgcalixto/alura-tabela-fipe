@@ -1,19 +1,21 @@
 package com.pgcalixto.tabela_fipe.model;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonNaming(PropertyNamingStrategies.UpperCamelCaseStrategy.class)
 public record Veiculo(
-    @JsonAlias("TipoVeiculo") TipoVeiculo tipoVeiculo,
-    @JsonAlias("Valor") String valor,
-    @JsonAlias("Marca") String marca,
-    @JsonAlias("Modelo") String modelo,
-    @JsonAlias("AnoModelo") int anoModelo,
-    @JsonAlias("Combustivel") String combustivel,
-    @JsonAlias("CodigoFipe") String codigoFipe,
-    @JsonAlias("MesReferencia") String mesReferencia,
-    @JsonAlias("SiglaCombustivel") String siglaCombustivel
+    TipoVeiculo tipoVeiculo,
+    String valor,
+    String marca,
+    String modelo,
+    int anoModelo,
+    String combustivel,
+    String codigoFipe,
+    String mesReferencia,
+    String siglaCombustivel
 ) {
 
 }
